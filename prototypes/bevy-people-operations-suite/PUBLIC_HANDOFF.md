@@ -1,10 +1,21 @@
-# Isolated prototype handoff
+# People Operations prototype — review guide
 
 ## Purpose and safety boundary
 
 This is a public-safe, code-only reference for PM, HR and developer review. It is kept entirely under `prototypes/bevy-people-operations-suite/`. A new, uniquely named root workflow verifies only this folder. Existing application files, Django settings/routes/models, database migrations, requirements, Docker files and workflows are not edited.
 
 The prototype is not registered as a Horilla app. Opening this PR does not connect it to company login, modify a database or deploy a website. Existing company features continue to use their own implementation. Treat this folder as a reference until a separate integration PR is reviewed.
+
+## What reviewers can try
+
+| Module | What is available in this PR |
+| --- | --- |
+| HR portal | Fictional employee profiles, leave, devices, admin screens and embedded expenses |
+| Expenses | Fictional submissions, receipt proof, HR/Super Admin approval and payroll export examples |
+| Insurance | Dashboard and Apps Script source; local data source is disconnected |
+| Daily updates | Timer/update demo and optional backend SQL; Supabase is not connected |
+
+For a quick review, read this page, run the commands below, then open the module launcher. The first decision is whether these workflows match the required scope. Connecting them to the company application is a separate development step.
 
 ## Run and verify
 
@@ -44,4 +55,4 @@ Use the existing Django employee identity, roles, models, services and migration
 
 ## Rollback
 
-This PR adds files only. Reverting its commit removes the isolated prototype and its new scoped verification workflow. No database rollback is needed because there are no migrations or runtime connections in this handoff. Do not merge or deploy automatically.
+This PR adds files only. Reverting its commit removes the prototype and its new scoped verification workflow. No database rollback is needed because there are no migrations or runtime connections in this handoff. Do not merge or deploy automatically.
